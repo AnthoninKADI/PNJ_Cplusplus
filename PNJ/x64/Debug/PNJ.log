@@ -1,0 +1,21 @@
+﻿  Character.cpp
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(48,18): error C2440: 'return': cannot convert from 'Weapon' to 'WeaponType'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(48,18): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(55,31): error C2556: 'void Character::setHP(int)': overloaded function differs only by return type from 'int Character::setHP(int)'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.h(31,6): message : see declaration of 'Character::setHP'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(55,17): error C2371: 'Character::setHP': redefinition; different basic types
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.h(31,6): message : see declaration of 'Character::setHP'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(81,56): error C2039: 'WeaponToStr': is not a member of 'Weapon'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Weapon.h(9,7): message : see declaration of 'Weapon'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(92,35): error C2039: 'SetWeaponType': is not a member of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Merchant.h(7,7): message : see declaration of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(111,15): error C2039: 'GetMoney': is not a member of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Merchant.h(7,7): message : see declaration of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(115,20): error C2039: 'GetMoney': is not a member of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Merchant.h(7,7): message : see declaration of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(117,12): error C2039: 'SetMoney': is not a member of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Merchant.h(7,7): message : see declaration of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Character.cpp(117,30): error C2039: 'GetMoney': is not a member of 'Merchant'
+C:\Users\anthonin.kadi\source\repos\PNJ\PNJ\Merchant.h(7,7): message : see declaration of 'Merchant'
+  Merchant.cpp
+  Generating Code...
