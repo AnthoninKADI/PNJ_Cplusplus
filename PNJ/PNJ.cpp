@@ -49,11 +49,13 @@ void StartGame() {
     string PlayerIntro;
     cin >> PlayerIntro;
     Player = Character(firstname, lastname, PlayerIntro, 2000, 2000, PlayerInventory, Race::Orc, Work::Paladin);
+
+    cout << endl;
 }
 
 void ShopBuy() {
     cout << " Choose which weapon you want to buy. Write the number : 1 - Bow, 2 - Dagger, 3 - Staff, 4 - Sword" << endl;
-    cout << " you have" << Player.SetMoney() << "Golds" << endl;
+    cout << " you have" << Player.setMoney() << "Golds" << endl;
     int number;
     cin >> number;
     if (number == 1) {
@@ -71,39 +73,43 @@ void ShopBuy() {
     else if (number == 4) {
         Player.Buy(merchant, number - 1);
     }
+    cout << endl;
 }
 
 void Fight() {
-    Character NPCEnemy = Character("Gobe", "Lin", "Gobelin je suis", 100, 100, NPCEnemyInventory, Race::Gobelin, Work::Warrior);
+    Character NPCEnemy = Character("Gobe", "Lin", "Gobelin je suis", 2000, 100, NPCEnemyInventory, Race::Gobelin, Work::Warrior);
     NPCEnemy.Introduction();
     NPCEnemyInventory[1] = NPCEnemySword;
     cout << "You are gonna attack the Gobelin, choose with which weapon you are gonna attack him" << endl;
-    Player.ShowInventory();
+    Player.showInventory();
     int number;
-    cin >> number;
-    if (number == 1) {
-        Player.Attack(NPCEnemy, number - 1);
+    do {
+        cin >> number;
+        if (number == 1) {
+            Player.Attack(NPCEnemy, number - 1);
+        }
+        else if (number == 2) {
+            Player.Attack(NPCEnemy, number - 1);
+        }
+        if (NPCEnemy.getHP() <= 0) {
+            cout << "You kill your enemy" << endl;
+            Player.addInventory(NPCEnemy.getMainWeapon());
+            Player.showInventory();
+        }
+        else if (Player.getHP() <= 0) {
+            cout << "YOU DIE" << endl;
+        }
+        else {
+            NPCEnemy.Attack(Player, 0);
+        }
     }
-    else if (number == 2) {
-        Player.Attack(NPCEnemy, number - 1);
-    }
-    if (NPCEnemy.GetHP() <= 0) {
-        cout << "You kill your enemy" << endl;
-        Player.AddInventory(NPCEnemy.SetWeaponType());
-        Player.ShowInventory();
-    }
-    else if (Player.GetHP() <= 0) {
-        cout << "YOU DIE" << endl;
-    }
-    else {
-        NPCEnemy.Attack(Player, 0);
-    }
-    while (NPCEnemy.GetHP() > 0 && Player.GetHP() > 0);
+    while (NPCEnemy.getHP() > 0 && Player.getHP() > 0);
+    cout << endl;
 }
 
 void ShopSell() {
     cout << " Choose which weapon you want to sell. Write the number" << endl;
-    Player.ShowInventory();
+    Player.showInventory();
     int number;
     cin >> number;
     if (number == 1) {
@@ -115,4 +121,5 @@ void ShopSell() {
     else if (number == 3) {
         Player.Sell(merchant, number - 1);
     }
+    cout << endl;
 }

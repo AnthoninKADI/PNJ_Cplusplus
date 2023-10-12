@@ -45,7 +45,7 @@ int Character::setMoney() {
 }
 
 WeaponType Character::setWeaponType() {
-	return mWeapon[1].setWeaponType();
+	return mWeapon[0].setWeaponType();
 }
 
 int Character::getHP() {
@@ -67,11 +67,16 @@ void Character::addInventory(Weapon weapon) {
 	{
 		if (mWeapon[i].setWeaponType() == WeaponType::Sword) {
 			mWeapon[i] = weapon;
-			//cout << "You obtain - " << Weapon.WeaponToStr(weapon.SetWeaponType()) << endl; cout << " Cost - " << weapon.SetWeaponCost() << endl; cout << " Damages - " << weapon.SetWeaponDamages() << endl; cout << " durability - " << weapon.GetWeaponDurability() << endl;
+			cout << "You obtain - " << WeaponToStr(weapon.setWeaponType()) << endl; cout << " Cost - " << weapon.setWeaponCost() << endl; cout << " Damages - " << weapon.setWeaponDamages() << endl; cout << " durability - " << weapon.getWeaponDurability() << endl;
 			InventoryAdd = true;
 			return;
 		}
 	}
+}
+
+Weapon Character::getMainWeapon()
+{
+	return mWeapon[0];
 }
 
 void Character::showInventory() {
@@ -123,7 +128,7 @@ void Character::Sell(Merchant merchant, int number) {
 
 void Character::Attack(Character& character, int number) {
 	Weapon& attackWeapon = mWeapon[number];
-	if (attackWeapon.setWeaponType() == WeaponType::Sword) {
+	if (attackWeapon.setWeaponType() == WeaponType::Default) {
 		cout << "You can't attack with this weapon" << endl;
 		return;
 	}
@@ -141,9 +146,9 @@ void Character::Attack(Character& character, int number) {
 		attackWeapon = Weapon();
 		return;
 	}
-
 	cout << attackWeapon.setNameWeapon() << " a inflige "
 		<< attackWeapon.setWeaponDamages() << " degats a " << character.setName()
-		<< ". Il lui reste " << character.setHP(12) << " PV."
+		<< ". Il lui reste " << character.getHP() << " PV."
 		<< endl;
 }
+

@@ -13,7 +13,7 @@ enum class Race {
 
 static string RaceToStr(Race race) {
 	switch (race) {
-	case Race::Default:
+	default:
 		return "Default";
 	case Race::Elf:
 		return "Elf";

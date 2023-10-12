@@ -12,7 +12,7 @@ private:
 	std::string merchantDescription;
 	std::string merchantCatchphrase;
 	int merchantMoney;
-	Weapon mWeapon[1];
+	Weapon mWeapon[4];
 
 public:
 	Merchant();

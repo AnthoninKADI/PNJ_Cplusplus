@@ -8,6 +8,7 @@ enum class WeaponType{
 	Dagger,
 	Staff,
 	Sword,
+	Default,
 };
 
 static string WeaponToStr(WeaponType weapon) {
@@ -20,6 +21,8 @@ static string WeaponToStr(WeaponType weapon) {
 		return "Staff";
 	case WeaponType::Sword:
 		return "Sword";
+	default:
+		return "Default";
 	}
 
 }

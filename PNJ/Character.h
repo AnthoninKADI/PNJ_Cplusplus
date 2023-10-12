@@ -15,7 +15,7 @@ private:
 	std::string characterLastName;
 	std::string characterCatchPhrase;
 	int characterMoney, characterLifePoint;
-	Weapon mWeapon[1];
+	Weapon mWeapon[4];
 	Race characterRace;
 	Work characterWork;
 
@@ -28,9 +28,10 @@ public:
 	WeaponType setWeaponType();
 	int setMoney();
 	int getHP();
-	int setHP(int hp);
+	void setHP(int hp);
 	void Introduction();
 	void addInventory(Weapon weapon);
+	Weapon getMainWeapon();
 	void showInventory();
 	void removeInInventory(int number);
 	void Buy(Merchant merchant, int number);

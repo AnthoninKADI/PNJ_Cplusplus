@@ -23,7 +23,7 @@ Merchant::Merchant(std::string name, std::string shopName, std::string descripti
 	merchantCatchphrase = catchPhrase;
 	merchantMoney = money;
 	for (int i = 0; i < 4; i++) {
-		mWeapon[i] = weapon[i];
+		mWeapon[i] = weapon[0];
 	}
 }
 
@@ -37,6 +37,7 @@ void Merchant::Introduction() {
 	cout << merchantCatchphrase << endl;
 	cout << "My shop name is" << merchantShopName << endl;
 	cout << "I have" << merchantMoney << "Golds" << endl;
+	cout << endl;
 }
 
 Weapon Merchant::setWeaponType(int number) {

@@ -13,7 +13,7 @@ enum class Work {
 
 static string WorkToStr(Work work) {
 	switch (work) {
-	case Work::Default:
+	default:
 		return "Default";
 	case Work::Archer:
 		return "Archer";
